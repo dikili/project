@@ -1,0 +1,97 @@
+﻿@model ProjectScreen.Models.Project
+
+@{
+    ViewBag.Title = "Update Project";
+}
+
+<h2></h2>
+<h3>Update details of  "@Model.Name" </h3>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Project</legend>
+
+        @Html.HiddenFor(model => model.Id)
+        <table>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Date)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.TextBox("Date", Model.Date.ToString("dd/MM/yyyy"), new { @class = "datefield" })
+                        @*@Html.TextBox(model => model.Date, new { @class = "datefield" })*@
+                        @*@Html.TextBox(model => model.Date, new { @class = "datefield" })*@
+                        @Html.ValidationMessageFor(model => model.Date)
+
+                        @*<input type="date" id="txtDate" class="datefield" value="@Model.Date.ToShortDateString()" />*@
+                    </div>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Name)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Name)
+                        @Html.ValidationMessageFor(model => model.Name)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Pmam)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Pmam)
+                        @Html.ValidationMessageFor(model => model.Pmam)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Description)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Description)
+                        @Html.ValidationMessageFor(model => model.Description)
+                    </div>
+                </td>
+            </tr>
+
+        </table>
+        <p>
+            <input type="submit" value="Save" /> |
+            @Html.ActionLink("Back to List", "Index", "Home")
+        </p>
+    </fieldset>
+}
+
+
+
+
+
+@section Scripts {
+  @*@Scripts.Render("~/bundles/jqueryval")*@
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".datefield").datepicker({ dateFormat: 'dd/mm/yy', changeYear: true });
+    });
+</script>
+
+}

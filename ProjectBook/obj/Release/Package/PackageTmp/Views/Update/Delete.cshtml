@@ -1,0 +1,73 @@
+﻿@model ProjectScreen.Models.Project
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2></h2>
+
+<h3>Delete "@Model.Name" completely ?</h3>
+<fieldset>
+    <legend>Project</legend>
+    <table>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.Label("Date")
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Date)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                   @Html.Label("Name")
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Name)
+                </div>
+            </td>
+
+        </tr>
+        
+        <tr>
+            <td>
+                <div class="display-label">
+                   @Html.Label("PM/AM")
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Pmam)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                  @Html.Label("Description")
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Description)
+                </div>
+            </td>
+        </tr>
+       
+    </table>
+
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index","Home")
+    </p>
+}

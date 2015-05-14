@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Project Monitoring</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+      
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+        
+        @Scripts.Render("~/bundles/jqueryui")
+        @Styles.Render("~/Content/themes/base/css", "~/Content/css")
+        @*<script type="text/javascript" src="../../Content/Sil.js"></script>*@
+
+    </head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    @*<p class="site-title">@Html.ActionLink("SYZYGY", "Index", "Home", null, new { style = "color: green" })</p>*@
+                    <img alt="SYZYGY LOGO" style="vertical-align: middle;" height="40px" src="../../Content/Logo.PNG" title="Logo" />
+                </div>
+                <div class="float-right">
+                 
+                    <nav>
+                        <ul id="menu">
+                            <li>@Html.ActionLink("Projects On Board", "Index", "Home")</li>
+                            <li>@Html.ActionLink("New Project", "Create", "Update")</li>
+                           
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; SYZYGY</p>
+                </div>
+            </div>
+        </footer>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryui")
+        @Styles.Render("~/Content/themes/base/css")
+        @RenderSection("scripts", required: false)
+        <script src="Scripts/jquery-1.4.4.js"></script>
+        @*<script type="text/javascript">
+            $(document).ready(function () {
+                $(".modalDelete").click(function () {
+                   // $.inputlar=$(document).find("tr");
+                    var yeniid = $(this).find('span').attr('id');
+                    alert("Seçtiğiniz ID: " + yeniid);
+                
+                });
+            });
+        </script>*@
+
+    </body>
+</html>
