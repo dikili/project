@@ -4,16 +4,18 @@ namespace ProjectScreen.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using DataAccess;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<ProjectScreen.Models.ProjectsDb>
+    internal sealed class Configuration : DbMigrationsConfiguration<DataAccess.DbContextClass>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(ProjectScreen.Models.ProjectsDb context)
+        protected override void Seed(DataAccess.DbContextClass context)
         {
+
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

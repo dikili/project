@@ -1,0 +1,13 @@
+C:\Source\ProjectBook\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+C:\Source\ProjectBook\DataAccess\bin\Debug\DataAccess.dll.config
+C:\Source\ProjectBook\DataAccess\bin\Debug\DataAccess.dll
+C:\Source\ProjectBook\DataAccess\bin\Debug\DataAccess.pdb
+C:\Source\ProjectBook\DataAccess\bin\Debug\EntityFramework.dll
+C:\Source\ProjectBook\DataAccess\bin\Debug\Helpers.dll
+C:\Source\ProjectBook\DataAccess\bin\Debug\System.Data.Entity.Repository.dll
+C:\Source\ProjectBook\DataAccess\bin\Debug\Helpers.pdb
+C:\Source\ProjectBook\DataAccess\bin\Debug\EntityFramework.xml
+C:\Source\ProjectBook\DataAccess\obj\Debug\DataAccess.dll
+C:\Source\ProjectBook\DataAccess\obj\Debug\DataAccess.pdb
+C:\Source\ProjectBook\DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Source\ProjectBook\DataAccess\bin\Debug\EntityFramework.SqlServer.xml

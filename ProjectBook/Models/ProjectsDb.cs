@@ -6,15 +6,5 @@ using System.Web;
 
 namespace ProjectScreen.Models
 {
-    public class ProjectsDb :DbContext
-    {
-
-       
-        public ProjectsDb() :base("name=Projectdb")
-        {
-        
-        
-        }
-        public DbSet<Project> Projects { get; set; }
-    }
+    
 }

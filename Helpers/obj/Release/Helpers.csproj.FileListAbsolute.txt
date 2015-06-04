@@ -1,0 +1,5 @@
+C:\Source\ProjectBook\Helpers\bin\Release\Helpers.dll
+C:\Source\ProjectBook\Helpers\bin\Release\Helpers.pdb
+C:\Source\ProjectBook\Helpers\obj\Release\Helpers.csprojResolveAssemblyReference.cache
+C:\Source\ProjectBook\Helpers\obj\Release\Helpers.dll
+C:\Source\ProjectBook\Helpers\obj\Release\Helpers.pdb

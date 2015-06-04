@@ -1,0 +1,4 @@
+C:\Source\ProjectBook\Helpers\bin\Debug\Helpers.dll
+C:\Source\ProjectBook\Helpers\bin\Debug\Helpers.pdb
+C:\Source\ProjectBook\Helpers\obj\Debug\Helpers.dll
+C:\Source\ProjectBook\Helpers\obj\Debug\Helpers.pdb

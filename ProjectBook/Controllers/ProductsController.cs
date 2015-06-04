@@ -22,14 +22,14 @@ namespace ProjectScreen.Controllers
             return products;
         }
 
-        public HttpResponseMessage GetProduct(int id)
+        public IHttpActionResult GetProduct(int id)
         {
             var product = products.FirstOrDefault((p) => p.Id == id);
             if (product == null)
             {
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                return NotFound();
             }
-            return new HttpResponseMessage(HttpStatusCode.OK);
+            return Ok(product);
         }
     }
 }

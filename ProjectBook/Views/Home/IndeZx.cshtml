@@ -1,0 +1,33 @@
+﻿@model ProjectScreen.Models.User
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LoginCheck</title>
+</head>
+<body>
+    <div>
+
+
+        @using (Html.BeginForm("Search", "Events"))
+        {
+        <fieldset>
+            <legend>Login</legend>
+           
+            <div class="editor-label">
+                <td>
+                   @Html.TextBoxFor(m => m.Pass)
+                </td>
+            </div>
+           
+            <input type="submit" value="Log In" />
+        </fieldset>
+        }
+    </div>
+</body>
+</html>

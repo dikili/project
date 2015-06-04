@@ -1,0 +1,21 @@
+{
+    "environmentSettings": {
+        "webSite": {
+            "name": "ProjectApi",
+            "location": "West Europe"
+        },
+        "databases": [
+            {
+                "connectionStringName": "defaultConnection",
+                "databaseName": "ProjectApi_db",
+                "serverName": "projectdb83",
+                "user": "dikili",
+                "password": "",
+                "edition": "",
+                "size": "",
+                "collation": "",
+                "location": "West Europe"
+            }
+        ]
+    }
+}
