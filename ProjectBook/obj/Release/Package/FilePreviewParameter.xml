@@ -1,13 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="IIS Web Application Name" description="" value="ProjectBook" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^c:\\Source\\Projects\\ProjectBook\\ProjectBook\\obj\\Release\\Package\\PackageTmp$" />
-    <parameterEntry kind="ProviderPath" scope="setAcl" match="^c:\\Source\\Projects\\ProjectBook\\ProjectBook\\obj\\Release\\Package\\PackageTmp$" />
+  <parameter name="IIS Web Application Name" description="" value="dikili" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Source\\ProjectBook\\ProjectBook\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Source\\ProjectBook\\ProjectBook\\obj\\Release\\Package\\PackageTmp$" />
   </parameter>
-  <parameter name="Projectdb-Web.config Connection String" description="Projectdb Connection String used in web.config by the application to access the database." value="Data Source=.\SQLEXPRESS;Initial Catalog=Proje;Integrated Security=True" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="c:\\Source\\Projects\\ProjectBook\\ProjectBook\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Projectdb']/@connectionString" />
-  </parameter>
-  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." value="DefaultConnection_ConnectionString" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="c:\\Source\\Projects\\ProjectBook\\ProjectBook\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  <parameter name="Projectdb-Web.config Connection String" description="Projectdb Connection String used in web.config by the application to access the database." value="Server=tcp:projectdb83.database.windows.net,1433;Database=Projectdb;User ID=dikili@projectdb83;Password=F213233d;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Source\\ProjectBook\\ProjectBook\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Projectdb']/@connectionString" />
   </parameter>
 </parameters>

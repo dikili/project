@@ -39,7 +39,13 @@ namespace DataAccess
         public static void RemoveProject(Project book)
         {
             DbContextClass db = new DbContextClass();
-            db.Projects.Remove(book);
+            //very interesting db.Projects.Remove(book) has not worked
+            IEnumerable<Project> t = from p in db.Projects
+                        where p.Id == book.Id
+                        select p;
+            db.Projects.Remove(t.FirstOrDefault());
+
+        //    db.Projects.Remove(book);
             db.SaveChanges();
         }
     }

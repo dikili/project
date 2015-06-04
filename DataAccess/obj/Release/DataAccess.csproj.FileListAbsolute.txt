@@ -1,0 +1,13 @@
+C:\Source\ProjectBook\DataAccess\bin\Release\DataAccess.dll.config
+C:\Source\ProjectBook\DataAccess\bin\Release\DataAccess.dll
+C:\Source\ProjectBook\DataAccess\bin\Release\DataAccess.pdb
+C:\Source\ProjectBook\DataAccess\bin\Release\EntityFramework.dll
+C:\Source\ProjectBook\DataAccess\bin\Release\EntityFramework.SqlServer.dll
+C:\Source\ProjectBook\DataAccess\bin\Release\Helpers.dll
+C:\Source\ProjectBook\DataAccess\bin\Release\System.Data.Entity.Repository.dll
+C:\Source\ProjectBook\DataAccess\bin\Release\Helpers.pdb
+C:\Source\ProjectBook\DataAccess\bin\Release\EntityFramework.xml
+C:\Source\ProjectBook\DataAccess\bin\Release\EntityFramework.SqlServer.xml
+C:\Source\ProjectBook\DataAccess\obj\Release\DataAccess.csprojResolveAssemblyReference.cache
+C:\Source\ProjectBook\DataAccess\obj\Release\DataAccess.dll
+C:\Source\ProjectBook\DataAccess\obj\Release\DataAccess.pdb

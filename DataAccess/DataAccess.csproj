@@ -67,7 +67,6 @@
     </Compile>
     <Compile Include="ProjectQuery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UpdateOps.cs" />
     <Compile Include="UserQuery.cs" />
   </ItemGroup>
   <ItemGroup>

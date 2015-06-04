@@ -104,10 +104,6 @@ c:\Source\Projects\ProjectBook\ProjectBook\bin\Owin.dll
 c:\Source\Projects\ProjectBook\ProjectBook\bin\Microsoft.Owin.xml
 c:\Source\Projects\ProjectBook\ProjectBook\bin\Microsoft.Owin.Security.xml
 c:\Source\Projects\ProjectBook\ProjectBook\obj\Debug\ProjectBook.csprojResolveAssemblyReference.cache
-C:\Source\ProjectBook\ProjectBook\obj\Debug\ProjectBook.csproj.App.config
-C:\Source\ProjectBook\ProjectBook\obj\Debug\ProjectBook.csprojResolveAssemblyReference.cache
-C:\Source\ProjectBook\ProjectBook\obj\Debug\ProjectScreen.Migrations.InitialCreate.resources
-C:\Source\ProjectBook\ProjectBook\obj\Debug\ProjectBook.csproj.GenerateResource.Cache
 C:\Source\ProjectBook\ProjectBook\bin\ProjectScreen.dll.config
 C:\Source\ProjectBook\ProjectBook\bin\ProjectScreen.dll
 C:\Source\ProjectBook\ProjectBook\bin\ProjectScreen.pdb
@@ -216,5 +212,9 @@ C:\Source\ProjectBook\ProjectBook\bin\ko\System.Spatial.resources.dll
 C:\Source\ProjectBook\ProjectBook\bin\ru\System.Spatial.resources.dll
 C:\Source\ProjectBook\ProjectBook\bin\zh-Hans\System.Spatial.resources.dll
 C:\Source\ProjectBook\ProjectBook\bin\zh-Hant\System.Spatial.resources.dll
+C:\Source\ProjectBook\ProjectBook\obj\Debug\ProjectBook.csproj.App.config
+C:\Source\ProjectBook\ProjectBook\obj\Debug\ProjectBook.csprojResolveAssemblyReference.cache
+C:\Source\ProjectBook\ProjectBook\obj\Debug\ProjectScreen.Migrations.InitialCreate.resources
+C:\Source\ProjectBook\ProjectBook\obj\Debug\ProjectBook.csproj.GenerateResource.Cache
 C:\Source\ProjectBook\ProjectBook\obj\Debug\ProjectScreen.dll
 C:\Source\ProjectBook\ProjectBook\obj\Debug\ProjectScreen.pdb

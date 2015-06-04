@@ -220,3 +220,5 @@ C:\Source\ProjectBook\ProjectBook\obj\Release\ProjectScreen.dll
 C:\Source\ProjectBook\ProjectBook\obj\Release\ProjectScreen.pdb
 C:\Source\ProjectBook\ProjectBook\bin\Helpers.dll
 C:\Source\ProjectBook\ProjectBook\bin\Helpers.pdb
+C:\Source\ProjectBook\ProjectBook\bin\DataAccess.dll
+C:\Source\ProjectBook\ProjectBook\bin\DataAccess.pdb
