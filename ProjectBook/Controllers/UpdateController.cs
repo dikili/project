@@ -32,7 +32,7 @@ namespace ProjectScreen.Controllers
             if (ModelState.IsValid)
             {
                 DataAccess.ProjectQuery.AddProject(proje);
-                return RedirectToAction("Index", "Home");
+                //return RedirectToAction("Index", "Home");
             }
 
             return View(proje);

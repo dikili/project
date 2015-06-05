@@ -12,7 +12,18 @@
         @Scripts.Render("~/bundles/jqueryui")
         @Styles.Render("~/Content/themes/base/css", "~/Content/css")
         @*<script type="text/javascript" src="../../Content/Sil.js"></script>*@
+        <script type="text/javascript">
 
+            //$(document).ready(function () {
+
+            //    $("New").click(function(){})
+
+
+            //});
+
+
+
+        </script>
     </head>
     <body>
 @if (Request.IsAuthenticated)
@@ -59,7 +70,7 @@
         @Scripts.Render("~/bundles/jqueryui")
         @Styles.Render("~/Content/themes/base/css")
         @RenderSection("scripts", required: false)
-        <script src="Scripts/jquery-1.4.4.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
         @*<script type="text/javascript">
             $(document).ready(function () {
                 $(".modalDelete").click(function () {
