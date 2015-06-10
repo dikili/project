@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using System.Web.Services;
 
 namespace ProjectScreen.Controllers
 {   [AllowAnonymous]
@@ -28,7 +29,7 @@ namespace ProjectScreen.Controllers
              if(user.IsValid(user.UserName,user.Password))
              {
                  FormsAuthentication.SetAuthCookie(user.UserName,user.RememberMe);
-                HttpContext.Items.Add("status","LoginIsASuccess");
+                 HttpContext.Items.Add("status","LoginIsASuccess");
                  return RedirectToAction("Index", "Home");
              }
              else
@@ -46,6 +47,14 @@ namespace ProjectScreen.Controllers
         {
             FormsAuthentication.SignOut();
             return RedirectToAction("Login", "User");
+        }
+
+        [WebMethod]
+        [HttpGet]
+        public ActionResult WbLogout()
+        {
+            FormsAuthentication.SignOut();
+            return Json("Success", JsonRequestBehavior.AllowGet);
         }
 
     }

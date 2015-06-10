@@ -8,9 +8,163 @@
         <meta name="viewport" content="width=device-width" />
         @Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")
-        
+        @*@Scripts.Render("~/bundles/jquery")*@
+        @*<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>*@
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
         @Scripts.Render("~/bundles/jqueryui")
         @Styles.Render("~/Content/themes/base/css", "~/Content/css")
+        <script src="~/Scripts/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+        <script src="~/Scripts/jquery.validationEngine-en.js"></script>
+        <link href="~/Content/validationEngine.jquery.css" rel="stylesheet" />
+        <script>
+            $(document).ready(function () {
+                $("#login").validationEngine();
+              
+                });
+            </script>
+        <script>            
+            
+            
+            $(document).ready(function () {
+
+
+                $(".edit-project").click(function () {
+
+                    var that = this;
+
+                    var id = $(this).data("id");
+                    console.log("id: ", id);
+
+                    $.ajax({
+
+                        url: '/api/Project/GetProject/' + id,
+                        type: 'GET',
+                        //data: JSON.stringify({ 'id': id }),
+                        contentType: 'application/json;charset=utf-8',
+                        dataType: 'json',
+                        traditional: true,
+                        success: function (data) {
+
+                            console.log(data);
+
+                            $("#name").val(data.Name);
+                            $("#pmam").val(data.Pmam);
+                            $("#description").val(data.Description);
+
+                            dialog = $("#dialog-form").dialog({
+                                autoOpen: true,
+                                height: 300,
+                                width: 350,
+                                modal: true,
+                                buttons: {
+                                    "Save": function () {
+
+                                        console.log("saveeee");
+                                        var dialog = this;
+
+                                        var project = {
+                                            Id: data.Id,
+                                            Name: $("#name").val(),
+                                            Pmam: $("#pmam").val(),
+                                            Description: $("#description").val(),
+                                            Date: data.Date
+                                        };
+
+                                        //console.log(project);
+
+                                        $.ajax({
+                                            url: '/api/Project/Save',
+                                            type: 'POST',
+                                            data: JSON.stringify(project),
+                                            contentType: "application/json",                                         
+                                            success: function (data) {
+
+                                                console.log(data);
+                                                console.log(that);
+
+                                                $(that).parents("tr").find(".name-label").text(data.Name);
+
+                                                $(dialog).dialog("close");
+
+                                            },
+                                            error: function () {
+                                                alert("An error has occured!!!");
+                                            }
+                                        })
+
+                                    },
+                                    Cancel: function () {
+                                        dialog.dialog("close");
+                                    }
+                                },
+                                close: function () {
+                                    //form[0].reset();
+                                    //allFields.removeClass("ui-state-error");
+                                }
+                            });
+
+                        },
+                        error: function () {
+                            alert("An error has occured!!!");
+                        }
+                    })
+
+                });
+
+
+                $("#logoff").click(function () {
+
+                    $("#dialog").dialog({
+                        resizable: false,
+                        height: 190,
+                        modal: true,
+                        buttons: {
+                            "Log Off": function () {
+                                
+                                console.log("log off!");
+
+                                $.ajax({
+
+                                    // your data could be a View or Json or what ever you returned in your action method 
+                                    // parse your data here
+
+                                    url: '/User/WbLogout',
+                                    type: 'GET',
+                                    //data: JSON.stringify({ 'Options': someData }),
+                                    contentType: 'application/json;charset=utf-8',
+                                    dataType: 'json',
+                                    traditional: true,
+                                    success: function (data) {
+
+                                        if (data == "Success") {
+                                            alert("Done");
+                                            window.location = "/";
+                                            $(element).closest("form").submit(); //<------------ submit form
+                                        } else {
+                                            alert("Error occurs on the Database level!");
+                                        }
+                                    },
+                                    error: function () {
+                                        alert("An error has occured!!!");
+                                    }
+                                })
+
+                            },
+                            "Continue browsing": function () {
+
+                                console.log("close");
+
+                                $(this).dialog("close");
+                            }
+                        }
+                    });
+                    
+                });
+
+            });
+           </script>
+
+        
         @*<script type="text/javascript" src="../../Content/Sil.js"></script>*@
 
     </head>
@@ -30,8 +184,8 @@
                         <ul id="menu">
                             <li>@Html.ActionLink("Projects On Board", "Index", "Home")</li>
                             <li>@Html.ActionLink("New Project", "Create", "Update")</li>
-                            <li>@Html.ActionLink("Log Out","Logout","User")</li>
-                           
+                            @*<li>@Html.ActionLink("Log Out", "User", "Logout", new { id="logoff" ,name="logoff"})</li>*@
+                            <li><input value="Log Out" id="logoff" name="logoff" type="submit"/></li>
                         </ul>
                     </nav>
                 </div>
@@ -54,22 +208,26 @@
                 </div>
             </div>
         </footer>
-
-        @Scripts.Render("~/bundles/jquery")
+      
+     
         @Scripts.Render("~/bundles/jqueryui")
         @Styles.Render("~/Content/themes/base/css")
         @RenderSection("scripts", required: false)
-        <script src="Scripts/jquery-1.4.4.js"></script>
+        @*<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>*@
         @*<script type="text/javascript">
             $(document).ready(function () {
                 $(".modalDelete").click(function () {
                    // $.inputlar=$(document).find("tr");
                     var yeniid = $(this).find('span').attr('id');
                     alert("Seçtiğiniz ID: " + yeniid);
-                
                 });
             });
         </script>*@
+       
+
 
     </body>
 </html>
+<div id="dialog" title="logoff" style="display: none;">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Are you sure?</p>
+</div>

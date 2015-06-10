@@ -52,18 +52,19 @@
         <td>
             @item.Date.ToShortDateString()
         </td>
-        <td>
+        <td class="name-label">
             @item.Name
         </td>
-        <td>
+        <td class="pmam-label">
             @item.Pmam
         </td>
-        <td>
+        <td class="description-label">
             @item.Description
         </td>
 
         <td>
-            @Html.ActionLink("Edit", "Edit", new { controller = "Update", Id = item.Id })
+            @*@Html.ActionLink("Edit", "Edit", new { controller = "Update", Id = item.Id })*@
+            <a href="#" class="edit-project" data-id="@item.Id">Edit</a>
             <div id="del">
                 @Html.ActionLink("Delete", "Delete", new { controller = "Update", Id = item.Id }, new { style = "color:red" })
             </div>
@@ -77,4 +78,24 @@
 
 </table>
  </div>
+
+
+
+<div id="dialog-form" title="Edit Project" style="display: none;">
+  
+    <form>
+        <fieldset>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" class="text ui-widget-content ui-corner-all">
+            <label for="pmam">pmam</label>
+            <input type="text" name="pmam" id="pmam" class="text ui-widget-content ui-corner-all">
+            <label for="Description">Description</label>
+            <input type="text" name="description" id="description" class="text ui-widget-content ui-corner-all">
+
+            <!-- Allow form submission with keyboard without duplicating the dialog button -->
+            @*<input type="submit" tabindex="-1" style="position:absolute; top:-1000px">*@
+        </fieldset>
+    </form>
+</div>
+
 

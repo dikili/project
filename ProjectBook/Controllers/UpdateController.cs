@@ -57,6 +57,7 @@ namespace ProjectScreen.Controllers
         {
             if (ModelState.IsValid)
             {
+
                 DataAccess.ProjectQuery.UpdateProjectState(pro);
                 return RedirectToAction("Index", "Home");
             }

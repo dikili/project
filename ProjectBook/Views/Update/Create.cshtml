@@ -5,12 +5,14 @@
 }
 
 <h2>New Entry Details</h2>
+@*@using (Html.BeginForm())*@
+<form id="frmCreate" method="post" action="/Update/Create">
 
-@*@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()*@
-<form id="newProject" method="post">
-   @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
+    @Html.AntiForgeryToken()
+  
+    @*<form id="newProject" method="post">
+        @Html.AntiForgeryToken()
+         @Html.ValidationSummary(true)*@
 
     <fieldset>
         <legend>Project</legend>
@@ -68,11 +70,11 @@
             <span id="msg" style="color:red;" />
         </table>
         <p>
-            <input type="button" value="Create" id="New" />| @Html.ActionLink("Back to List", "Index", "Home")
+            <input type="submit" value="Create" id="New" />| @Html.ActionLink("Back to List", "Index", "Home")
         </p>
     </fieldset>
+
 </form>
-}
 
 @*@section Scripts {
     @Scripts.Render("~/bundles/jqueryval")*@
@@ -84,19 +86,14 @@
             $(".datefield").datepicker({ dateFormat: 'dd/mm/yy', changeYear: true });
         });
     </script>
+}
 
-    <script type="text/javascript">
-    $('#New').click(function () {
+  @*$('#New').click(function () {
         var form = $("#newProject");
         var url = "/Update/Create"
         var formData = form.serialize();
         $.post(url, formData, function (data) {
-          window.location="/Home/Index"        
+            window.location = "/Home/Index"
         });
-     
-    })
-    </script>
 
-
-   
-}
+    })*@

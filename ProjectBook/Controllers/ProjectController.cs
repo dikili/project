@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using ProjectScreen.Models;
+using DataAccess;
 
 namespace ProjectScreen.Controllers
 {
@@ -24,17 +25,37 @@ namespace ProjectScreen.Controllers
             return projects;
         }
 
-
+        [HttpGet]
         public IHttpActionResult GetProject(int id)
         {
-            var project = projects.FirstOrDefault(p => p.Id == id);
+
+            DbContextClass db = new DbContextClass();
+
+            var project =  db.Projects.FirstOrDefault(p => p.Id == id);
 
             if (project == null)
             {
-                return NotFound();
+                return Ok("Project not found!");
             }
             return Ok(project);
 
         }
+
+        [HttpPost]
+        public IHttpActionResult Save(Project project)
+        {
+
+            DbContextClass db = new DbContextClass();
+
+            if (ModelState.IsValid)
+            {
+                DataAccess.ProjectQuery.UpdateProjectState(project);
+                return Ok(project);
+            }
+
+            return Ok("Model state is not valid.");
+        }
+
+        
     }
 }
