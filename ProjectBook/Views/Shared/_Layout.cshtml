@@ -24,16 +24,22 @@
             </script>
         <script>            
             
-            
             $(document).ready(function () {
-
 
                 $(".edit-project").click(function () {
 
                     var that = this;
 
-                    var id = $(this).data("id");
-                    console.log("id: ", id);
+                    var id = $(this).data('any');  // data-xx seklinde yazarak data
+                                                   // ile erisiyoruz.
+                    var monthNames = [
+                     "January", "February", "March",
+                     "April", "May", "June", "July",
+                     "August", "September", "October",
+                     "November", "December"
+                    ];
+
+                   
 
                     $.ajax({
 
@@ -45,8 +51,17 @@
                         traditional: true,
                         success: function (data) {
 
-                            console.log(data);
+                            var date = new Date(data.Date);
+                            var day = date.getDay();
+                            var month = monthNames[date.getMonth()];
+                            var year = date.getFullYear();
+                            console.log(month);
+                            console.log(date.getMonth());
+                            var dateFormatted = day + "-" + month + "-" + year;
 
+                            data.Date
+                            console.log(data);
+                            $('#date').val(dateFormatted);
                             $("#name").val(data.Name);
                             $("#pmam").val(data.Pmam);
                             $("#description").val(data.Description);
@@ -110,7 +125,6 @@
                     })
 
                 });
-
 
                 $("#logoff").click(function () {
 

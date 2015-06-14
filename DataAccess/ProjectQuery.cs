@@ -48,5 +48,11 @@ namespace DataAccess
         //    db.Projects.Remove(book);
             db.SaveChanges();
         }
+
+        public static List<Project> GetAllProjects()
+        {
+            DbContextClass db=new DbContextClass();
+            return db.Projects.ToList<Project>();
+        }
     }
 }

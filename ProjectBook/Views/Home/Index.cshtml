@@ -64,7 +64,7 @@
 
         <td>
             @*@Html.ActionLink("Edit", "Edit", new { controller = "Update", Id = item.Id })*@
-            <a href="#" class="edit-project" data-id="@item.Id">Edit</a>
+            <a href="#" class="edit-project" data-any="@item.Id">Edit</a>
             <div id="del">
                 @Html.ActionLink("Delete", "Delete", new { controller = "Update", Id = item.Id }, new { style = "color:red" })
             </div>
@@ -85,6 +85,8 @@
   
     <form>
         <fieldset>
+            <label for="date">Date</label>
+            <input type="text" name="date" id="date" class="text ui-widget-content ui-corner-all">
             <label for="name">Name</label>
             <input type="text" name="name" id="name" class="text ui-widget-content ui-corner-all">
             <label for="pmam">pmam</label>
